@@ -476,14 +476,16 @@
     }
 
     // Initial render
-    if (!search) {
-  container.innerHTML = '<p>Start typing to search...</p>';
-   return;
-   }
+     // renderImages('');
 
     // Search functionality
-    document.getElementById('searchInput').addEventListener('input', function() {
-      renderImages(this.value);
+    // document.getElementById('searchInput').addEventListener('input', function() {
+     // renderImages(this.value);
+
+if (!search) {
+  container.innerHTML = '<p>Start typing to search...</p>';
+  return;
+}
     });
   </script>
 </body>
