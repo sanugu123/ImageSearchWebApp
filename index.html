@@ -68,7 +68,7 @@
       }, 
  {
         url: 'Images/VanilaIceCreamFromSams.jpg',
-        tags: ['Vanilla Ice Cream From Sams']
+        tags: ['Vanila Ice Cream From Sams']
       },    
 {
         url: 'Images/SpinachChopped.jpg',
@@ -100,7 +100,7 @@
       },
 {
         url: 'Images/BakingSoda.jpg',
-        tags: ['Baking Soda']
+        tags: ['BakingSoda']
       },
 {
         url: 'Images/TShirtBags.jpg',
@@ -184,7 +184,7 @@
       },
 {
         url: 'Images/SarranoChilli.jpg',
-        tags: ['Serrano Chilli','Serrano']
+        tags: ['Sarrano Chilli','Sarrano']
       },
 {
         url: 'Images/Garlic.jpg',
@@ -212,11 +212,11 @@
       },
 {
         url: 'Images/FrenchFries.jpg',
-        tags: ['French Fries']
+        tags: ['FrenchFries']
       },
 {
         url: 'Images/MozerellaCheese.jpg',
-        tags: ['Mozzarella Cheese','Mozzarella']
+        tags: ['Mozzarella Cheese','Mozzarella','Mozerella']
       },
 {
         url: 'Images/Hummus.jpg',
@@ -384,12 +384,16 @@
       },
 {
         url: 'Images/DarkSoyaSauce.jpg',
-        tags: ['Dark Soya Sauce','Kikoman']
+        tags: ['Light Soya Sauce','Kikoman']
       },
 {
         url: 'Images/ButterPaper.jpg',
         tags: ['Butter Paper']
-      },     
+      },
+{
+        url: 'Images/PrinterPaperRoll.jpg',
+        tags: ['Printer Paper Roll']
+      },      
 {
         url: 'Images/PinkSoap.jpg',
         tags: ['Pink Soap']
@@ -428,7 +432,7 @@
       },
 {
         url: 'Images/BasinFlour.jpg',
-        tags: ['Besan Flour']
+        tags: ['Basin Flour']
       },
 {
         url: 'Images/BlackPepper.jpg',
@@ -437,6 +441,10 @@
 {
         url: 'Images/GreekYogurt.jpg',
         tags: ['Greek Yogurt']
+      },
+{
+        url: 'Images/DarkSoyaSauce.jpg',
+        tags: ['Dark Soya Sauce']
       }
     ];
 
@@ -447,9 +455,9 @@
       const search = keyword.trim().toLowerCase();
 
       // Filter by tag
-       const filtered = images.filter(img =>
-       img.tags.join(' ').toLowerCase().includes(search)
-       );
+      const filtered = images.filter(img =>
+        img.tags.some(t => t.toLowerCase().includes(search))
+      );
 
       // Show filtered images
       if (filtered.length === 0) {
@@ -465,6 +473,11 @@
         image.src = img.url;
         image.alt = img.tags[0];
 
+        image.style.cursor = 'pointer';
+        image.onclick = () => {
+        window.open(img.url, '_blank');
+        };
+
         const tags = document.createElement('div');
         tags.className = 'tags';
         tags.textContent = 'Tags: ' + img.tags.join(', ');
@@ -476,16 +489,11 @@
     }
 
     // Initial render
-     // renderImages('');
+    renderImages('');
 
     // Search functionality
-    // document.getElementById('searchInput').addEventListener('input', function() {
-     // renderImages(this.value);
-
-if (!search) {
-  container.innerHTML = '<p>Start typing to search...</p>';
-  return;
-}
+    document.getElementById('searchInput').addEventListener('input', function() {
+      renderImages(this.value);
     });
   </script>
 </body>
