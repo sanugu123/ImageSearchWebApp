@@ -455,9 +455,9 @@
       const search = keyword.trim().toLowerCase();
 
       // Filter by tag
-      const filtered = images.filter(img =>
-        img.tags.some(t => t.toLowerCase().includes(search))
-      );
+        const filtered = images.filter(img =>
+        img.tags.join(' ').toLowerCase().includes(search)
+        );
 
       // Show filtered images
       if (filtered.length === 0) {
