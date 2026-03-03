@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Search Web App</title>
+  <title>Item Search Web App</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 40px; background: #f8f8f8; }
     h1 { text-align: center; }
@@ -13,11 +13,21 @@
     #images { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; }
     .img-card { background-color: #fff; padding: 16px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
     .img-card img { width: 220px; height: 150px; object-fit: cover; border-radius: 6px;}
-    .img-card .tags { margin-top: 8px; font-size: 0.9em; color: #888; }
+    .img-card .tags {
+  margin-top: 8px;
+  font-size: 0.9em;
+  color: #555;
+  min-height: 48px;          /* Forces equal height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-wrap: break-word;
+}
   </style>
 </head>
 <body>
-  <h1>Item Search App</h1>
+  <h1>Image Search Web App</h1>
   <div id="search-box">
     <input type="text" id="searchInput" placeholder="Enter keyword...">
   </div>
@@ -498,7 +508,6 @@
   </script>
 </body>
 </html>
-
 
 
 
