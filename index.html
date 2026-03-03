@@ -389,11 +389,7 @@
 {
         url: 'Images/ButterPaper.jpg',
         tags: ['Butter Paper']
-      },
-{
-        url: 'Images/PrinterPaperRoll.jpg',
-        tags: ['Printer Paper Roll']
-      },      
+      },     
 {
         url: 'Images/PinkSoap.jpg',
         tags: ['Pink Soap']
@@ -480,7 +476,10 @@
     }
 
     // Initial render
-    renderImages('');
+    if (!search) {
+  container.innerHTML = '<p>Start typing to search...</p>';
+   return;
+   }
 
     // Search functionality
     document.getElementById('searchInput').addEventListener('input', function() {
