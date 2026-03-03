@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,7 +68,7 @@
       }, 
  {
         url: 'Images/VanilaIceCreamFromSams.jpg',
-        tags: ['Vanila Ice Cream From Sams']
+        tags: ['Vanilla Ice Cream From Sams']
       },    
 {
         url: 'Images/SpinachChopped.jpg',
@@ -99,7 +100,7 @@
       },
 {
         url: 'Images/BakingSoda.jpg',
-        tags: ['BakingSoda']
+        tags: ['Baking Soda']
       },
 {
         url: 'Images/TShirtBags.jpg',
@@ -183,7 +184,7 @@
       },
 {
         url: 'Images/SarranoChilli.jpg',
-        tags: ['Sarrano Chilli','Sarrano']
+        tags: ['Serrano Chilli','Serrano']
       },
 {
         url: 'Images/Garlic.jpg',
@@ -211,11 +212,11 @@
       },
 {
         url: 'Images/FrenchFries.jpg',
-        tags: ['FrenchFries']
+        tags: ['French Fries']
       },
 {
         url: 'Images/MozerellaCheese.jpg',
-        tags: ['Mozzarella Cheese','Mozzarella','Mozerella']
+        tags: ['Mozzarella Cheese','Mozzarella']
       },
 {
         url: 'Images/Hummus.jpg',
@@ -383,7 +384,7 @@
       },
 {
         url: 'Images/DarkSoyaSauce.jpg',
-        tags: ['Light Soya Sauce','Kikoman']
+        tags: ['Dark Soya Sauce','Kikoman']
       },
 {
         url: 'Images/ButterPaper.jpg',
@@ -431,7 +432,7 @@
       },
 {
         url: 'Images/BasinFlour.jpg',
-        tags: ['Basin Flour']
+        tags: ['Besan Flour']
       },
 {
         url: 'Images/BlackPepper.jpg',
@@ -440,10 +441,6 @@
 {
         url: 'Images/GreekYogurt.jpg',
         tags: ['Greek Yogurt']
-      },
-{
-        url: 'Images/DarkSoyaSauce.jpg',
-        tags: ['Dark Soya Sauce']
       }
     ];
 
@@ -454,9 +451,9 @@
       const search = keyword.trim().toLowerCase();
 
       // Filter by tag
-      const filtered = images.filter(img =>
-        img.tags.some(t => t.toLowerCase().includes(search))
-      );
+       const filtered = images.filter(img =>
+       img.tags.join(' ').toLowerCase().includes(search)
+       );
 
       // Show filtered images
       if (filtered.length === 0) {
